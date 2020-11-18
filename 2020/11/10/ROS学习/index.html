@@ -87,7 +87,7 @@
     
     
     </div>
-    <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+    <div><a class="about  site_url"  href="/about">关于</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="9">
 
@@ -142,19 +142,11 @@
         </a>
         
         <a  class=""
-           href="/2020/11/10/Python%E5%AD%A6%E4%B9%A0/"
+           href="/2019/11/02/xx/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="Python学习">Python学习</span>
-            <span class="post-date" title="2020-11-10 19:42:44">2020/11/10</span>
-        </a>
-        
-        <a  class=""
-           href="/2020/11/10/ROS%E5%AD%A6%E4%B9%A0/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="ROS学习">ROS学习</span>
-            <span class="post-date" title="2020-11-10 19:42:44">2020/11/10</span>
+            <span class="post-title" title="xx">xx</span>
+            <span class="post-date" title="2019-11-02 16:43:17">2019/11/02</span>
         </a>
         
         <a  class=""
@@ -166,6 +158,22 @@
         </a>
         
         <a  class=""
+           href="/2020/11/10/ROS%E5%AD%A6%E4%B9%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="ROS学习">ROS学习</span>
+            <span class="post-date" title="2020-11-10 19:42:44">2020/11/10</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/11/10/Python%E5%AD%A6%E4%B9%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python学习">Python学习</span>
+            <span class="post-date" title="2020-11-10 19:42:44">2020/11/10</span>
+        </a>
+        
+        <a  class=""
            href="/2020/11/10/Typora%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/"
            data-tag=""
            data-author="" >
@@ -174,19 +182,11 @@
         </a>
         
         <a  class=""
-           href="/2019/11/02/xx/"
+           href="/2020/11/11/%E5%9B%9B%E6%9C%88%E8%A3%82%E5%B8%9B%20%20%20%E7%AE%80%E5%AA%9C/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="xx">xx</span>
-            <span class="post-date" title="2019-11-02 16:43:17">2019/11/02</span>
-        </a>
-        
-        <a  class=""
-           href="/2020/11/10/Ubuntu%E5%AD%A6%E4%B9%A0/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="Ubuntu学习">Ubuntu学习</span>
-            <span class="post-date" title="2020-11-10 19:42:44">2020/11/10</span>
+            <span class="post-title" title="四月裂帛   简媜">四月裂帛   简媜</span>
+            <span class="post-date" title="2020-11-11 21:41:44">2020/11/11</span>
         </a>
         
         <a  class=""
@@ -198,11 +198,11 @@
         </a>
         
         <a  class=""
-           href="/2020/11/11/%E5%9B%9B%E6%9C%88%E8%A3%82%E5%B8%9B%20%20%20%E7%AE%80%E5%AA%9C/"
+           href="/2020/11/10/Ubuntu%E5%AD%A6%E4%B9%A0/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="四月裂帛   简媜">四月裂帛   简媜</span>
-            <span class="post-date" title="2020-11-11 21:41:44">2020/11/11</span>
+            <span class="post-title" title="Ubuntu学习">Ubuntu学习</span>
+            <span class="post-date" title="2020-11-10 19:42:44">2020/11/10</span>
         </a>
         
     </nav>
@@ -310,10 +310,6 @@
 </article>
 
 
-<p>
-    <a href="javascript:void(0)" target="_blank" rel="noopener" class="dashang" onclick="dashangToggle()">赏</a>
-</p>
-
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>ROS学习</p>
@@ -355,24 +351,6 @@
 </div>
 <div class="acParent"></div>
 
-<div class="hide_box" onclick="dashangToggle()"></div>
-<div class="shang_box">
-    <a class="shang_close" href="javascript:void(0)" target="_blank" rel="noopener" onclick="dashangToggle()">×</a>
-    <div class="shang_tit">
-        <p>喜欢就点赞,疼爱就打赏</p>
-    </div>
-    <div class="shang_payimg">
-        <div class="pay_img">
-            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
-            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
-        </div>
-    </div>
-    <div class="shang_payselect">
-        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
-    </div>
-</div>
-
-
 </body>
 <script src="/js/jquery.pjax.js?v=1.0.1" ></script>
 
@@ -394,14 +372,6 @@
         
 
         /*渲染打赏样式*/
-        
-        $("input[name=pay]").on("click", function () {
-            if($("input[name=pay]:checked").val()=="weixin"){
-                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
-            } else {
-                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
-            }
-        })
         
 
         /*高亮代码块行号*/
@@ -433,11 +403,6 @@
     }
 
     /*打赏页面隐藏与展示*/
-    
-    function dashangToggle() {
-        $(".shang_box").fadeToggle();
-        $(".hide_box").fadeToggle();
-    }
     
 
 </script>
