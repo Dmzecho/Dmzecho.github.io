@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Hexo</title>
+  <title>Hexo配置 | Hexo</title>
   <meta name="keywords" content="">
-  <meta name="description" content="Hexo">
+  <meta name="description" content="Hexo配置 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Ubuntu学习touch    #新建一个空文件文件和目录文件——文件 目录——文件夹 git更新至最新版本1、查看git版本 git --version2、添加Git官方的软件源 sudo add-apt-repository ppa:git-core&#x2F;ppa3、更新列表 sudo apt update sudo apt install -f sudo apt upgrade&#x2F;表示根目录Lin">
 <meta property="og:type" content="article">
@@ -50,7 +50,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -215,12 +215,43 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-Hexo配置" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol>
+        <h1 class="article-title">Hexo配置</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-11-19 22:32:42'>2020-11-19 22:32</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Hexo配置"><span class="toc-text">Hexo配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#常用命令"><span class="toc-text">常用命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#常见错误及解决方法"><span class="toc-text">常见错误及解决方法</span></a></li></ol></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -233,11 +264,44 @@
     }
 </style>
 </div>
-            <h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a></p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Hexo配置"><a href="#Hexo配置" class="headerlink" title="Hexo配置"></a>Hexo配置</h1><h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><pre><code>hexo g       #生成静态文件
+hexo server  #启动服务器。默认情况下，访问网址为： http://localhost:4000/
+hexo d       #部署网站</code></pre><h4 id="常见错误及解决方法"><a href="#常见错误及解决方法" class="headerlink" title="常见错误及解决方法"></a>常见错误及解决方法</h4><pre><code>error: Spawn failedat ChildProcess.&lt;anonymous&gt; (/home/xx/myblog/node_modules/...)</code></pre><p>1.删除.deploy_git文件后重新部署</p>
+<p>2.依次执行</p>
+<pre><code>hexo clean 
+hexo g
+hexo d</code></pre>
+      
+       
+    </div>
+</article>
 
-        </article>
-        
-        
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>Hexo配置</p>
+    
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" target="_blank" rel="noopener" title="xx">xx</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-11-19, 22:32:42</p>
+    <p><span class="copy-title">最后更新:</span>2020-11-19, 22:32:42</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/11/19/Hexo%E9%85%8D%E7%BD%AE/" title="Hexo配置">http://dmzecho.github.io/2020/11/19/Hexo%E9%85%8D%E7%BD%AE/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">©2017 xx</p>
