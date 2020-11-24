@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="四元数与旋转矩阵部分摘自 https:&#x2F;&#x2F;krasjet.github.io&#x2F;quaternion&#x2F;quaternion.pdf        里面对四元数和3D旋转的关系以及四元数乘法运算讲得很详细 四元数的介绍视频 https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1SW411y7W1https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1Lt411U7og 四元数">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-11-24T03:57:08.562Z">
+<meta property="og:updated_time" content="2020-11-24T04:03:17.725Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -256,7 +256,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-11-24 11:57:08'>2020-11-24 11:50</time>
+        创建时间:<time class="date" title='更新时间: 2020-11-24 12:03:17'>2020-11-24 11:50</time>
         
     </div>
     <div class="article-meta">
@@ -278,7 +278,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#四元数与旋转矩阵"><span class="toc-text">四元数与旋转矩阵</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#四元数乘法python"><span class="toc-text">四元数乘法python</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#已知末端姿态的四元数表示，求末端z轴的向量表示"><span class="toc-text">已知末端姿态的四元数表示，求末端z轴的向量表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#已知末端姿态，求绕z轴旋转120度的新姿态"><span class="toc-text">已知末端姿态，求绕z轴旋转120度的新姿态</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#思路1-通过齐次旋转矩阵间接转化"><span class="toc-text">思路1 通过齐次旋转矩阵间接转化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路二-四元数乘法直接计算"><span class="toc-text">思路二 四元数乘法直接计算</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#四元数与旋转矩阵"><span class="toc-text">四元数与旋转矩阵</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#四元数乘法python"><span class="toc-text">四元数乘法python</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#已知末端姿态的四元数表示，求末端z轴的向量表示"><span class="toc-text">已知末端姿态的四元数表示，求末端z轴的向量表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#已知末端姿态，求绕z轴旋转120度的新姿态"><span class="toc-text">已知末端姿态，求绕z轴旋转120度的新姿态</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#思路1-通过齐次旋转矩阵间接转化"><span class="toc-text">思路1 通过齐次旋转矩阵间接转化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#思路二-四元数乘法直接计算"><span class="toc-text">思路二 四元数乘法直接计算</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四元数计算公式"><span class="toc-text">四元数计算公式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#四元数乘法"><span class="toc-text">四元数乘法</span></a></li></ol></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -394,7 +394,7 @@ def go_to_orien(a):
     q0_now= quaternion.matrix_from_quaternion(q0)    #将现在姿态四元数转换成旋转矩阵
     matri_qd=[[math.cos(a*math.pi/180),-math.sin(a*math.pi/180),0,0],[math.sin(a*math.pi/180),math.cos(a*math.pi/180),0,0],[0,0,1,0],[0,0,0,1]]     #由给定角度计算齐次旋转矩阵
     qd_m= np.matmul(q0_now, matri_qd)     #绕动系坐标轴旋转，右乘
-    qd = quaternion.quaternion_from_matrix(qd_m)   #得到目标姿态四元数</code></pre><h3 id="思路二-四元数乘法直接计算"><a href="#思路二-四元数乘法直接计算" class="headerlink" title="思路二 四元数乘法直接计算"></a>思路二 四元数乘法直接计算</h3><pre><code>def go_to_orien_test(a): 
+    qd = quaternion.quaternion_from_matrix(qd_m)   #得到目标姿态四元数</code></pre><h4 id="思路二-四元数乘法直接计算"><a href="#思路二-四元数乘法直接计算" class="headerlink" title="思路二 四元数乘法直接计算"></a>思路二 四元数乘法直接计算</h4><pre><code>def go_to_orien_test(a): 
     #a为旋转的角度，q0为现在的姿态（四元数[x,y,z,w]）
 
     q1=[0,0,1,0]
@@ -410,7 +410,7 @@ def go_to_orien(a):
     q1[2]=math.sin(a*math.pi/180/2)*q3[2]
     q1[3]=math.cos(a*math.pi/180/2)               #绕z轴旋转a度的四元数表示 cos(theta/2)+sin(theta/2)(b*i+c*j+d*k)
 
-    qd=qua_multi(q1,q0,0)       #只用左乘q1即可得到新的姿态四元数，一个点左乘q右乘q逆是得到点新的坐标（一定是纯四元数）</code></pre><p>$$<br>\left\langle g_{i}, g_{j}\right\rangle=\int_{i_{i}}^{t_{2}} g_{i}(t) \cdot g_{j}^{*}(t) d t<br>$$</p>
+    qd=qua_multi(q1,q0,0)       #只用左乘q1即可得到新的姿态四元数，一个点左乘q右乘q逆是得到点新的坐标（一定是纯四元数）</code></pre><h3 id="四元数计算公式"><a href="#四元数计算公式" class="headerlink" title="四元数计算公式"></a>四元数计算公式</h3><h4 id="四元数乘法"><a href="#四元数乘法" class="headerlink" title="四元数乘法"></a>四元数乘法</h4><p>$$<br>q_{1}=a+b i+c j+d k, \quad q_{2}=e+f i+g j+h k<br>$$<br>q2左乘q1<br>$$<br>q_{1} q_{2}=\left[\begin{array}{cccc}<br>a &amp; -b &amp; -c &amp; -d \<br>b &amp; a &amp; -d &amp; c \<br>c &amp; d &amp; a &amp; -b \<br>d &amp; -c &amp; b &amp; a<br>\end{array}\right]\left[\begin{array}{l}<br>e \<br>f \<br>g \<br>h<br>\end{array}\right]<br>$$</p>
 
       
        
@@ -424,7 +424,7 @@ def go_to_orien(a):
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" target="_blank" rel="noopener" title="xx">xx</a></p>
     <p><span class="copy-title">发布时间:</span>2020-11-24, 11:50:58</p>
-    <p><span class="copy-title">最后更新:</span>2020-11-24, 11:57:08</p>
+    <p><span class="copy-title">最后更新:</span>2020-11-24, 12:03:17</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/11/24/%E5%9B%9B%E5%85%83%E6%95%B0/" title="四元数">http://dmzecho.github.io/2020/11/24/%E5%9B%9B%E5%85%83%E6%95%B0/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
