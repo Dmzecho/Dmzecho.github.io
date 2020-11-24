@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="mathjax: true 四元数与旋转矩阵部分摘自 https:&#x2F;&#x2F;krasjet.github.io&#x2F;quaternion&#x2F;quaternion.pdf        里面对四元数和3D旋转的关系以及四元数乘法运算讲得很详细 四元数的介绍视频 https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1SW411y7W1https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-11-24T03:36:08.986Z">
+<meta property="og:updated_time" content="2020-11-24T03:41:18.822Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -166,6 +166,14 @@
         </a>
         
         <a  class=""
+           href="/2020/11/11/Terminator%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Terminator常用快捷键">Terminator常用快捷键</span>
+            <span class="post-date" title="2020-11-11 16:18:37">2020/11/11</span>
+        </a>
+        
+        <a  class=""
            href="/2020/11/10/Typora%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/"
            data-tag=""
            data-author="" >
@@ -179,14 +187,6 @@
            data-author="" >
             <span class="post-title" title="Ubuntu学习">Ubuntu学习</span>
             <span class="post-date" title="2020-11-19 22:36:49">2020/11/19</span>
-        </a>
-        
-        <a  class=""
-           href="/2020/11/11/Terminator%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="Terminator常用快捷键">Terminator常用快捷键</span>
-            <span class="post-date" title="2020-11-11 16:18:37">2020/11/11</span>
         </a>
         
         <a  class=""
@@ -245,7 +245,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-11-24 11:36:08'>2020-11-23 22:15</time>
+        创建时间:<time class="date" title='更新时间: 2020-11-24 11:41:18'>2020-11-23 22:15</time>
         
     </div>
     <div class="article-meta">
@@ -289,7 +289,7 @@
 <h3 id="四元数乘法python"><a href="#四元数乘法python" class="headerlink" title="四元数乘法python"></a>四元数乘法python</h3><pre><code>import numpy as np
 
 def qua_multi(qa,qb,m):
-    #qa,qb均为四元数,[x,y,z,w],实轴在最后
+        #qa,qb均为四元数,[x,y,z,w],实轴在最后
     if(m==0):        #qb左乘qa
         qa_m=[[qa[3],-qa[2],qa[1],qa[0]],
         [qa[2],qa[3],-qa[0],qa[1]],
@@ -298,17 +298,15 @@ def qua_multi(qa,qb,m):
 
         qc=np.matmul(qa_m,qb)
 
-    if(m==1):    #qb右乘qa
+    if(m==1):      
+        #qb右乘qa
         qa_m=[[qa[3],qa[2],-qa[1],qa[0]],
         [-qa[2],qa[3],qa[0],qa[1]],
         [qa[1],-qa[0],qa[3],qa[2]],
         [-qa[0],-qa[1],-qa[2],qa[3]]]
         qc=np.matmul(qa_m,qb)
-    return qc</code></pre><h3 id="已知末端姿态的四元数表示，求末端z轴的向量表示"><a href="#已知末端姿态的四元数表示，求末端z轴的向量表示" class="headerlink" title="已知末端姿态的四元数表示，求末端z轴的向量表示"></a>已知末端姿态的四元数表示，求末端z轴的向量表示</h3><pre><code>设姿态为q0(x,y,z,w),思路是[0,0,1]左乘q0,右乘q0的逆
-    q1=[0,0,1,0]
-    q2=qua_multi(q0,q1,0)     #q1左乘q0
-    q0_0=[-q0[0],-q0[1],-q0[2],q0[3]]
-    q3=qua_multi(q0_0,q2,1)    #右乘q0的逆，前提是将q0转化成单位四元数，否则求逆时还要在共轭的基础上除以模长的平方</code></pre><h3 id="已知末端姿态，求绕z轴旋转120度的新姿态"><a href="#已知末端姿态，求绕z轴旋转120度的新姿态" class="headerlink" title="已知末端姿态，求绕z轴旋转120度的新姿态"></a>已知末端姿态，求绕z轴旋转120度的新姿态</h3><pre><code>末端姿态四元数均是在基座标系下的表示，而z轴是动系的坐标轴</code></pre><h4 id="思路1-通过齐次旋转矩阵间接转化"><a href="#思路1-通过齐次旋转矩阵间接转化" class="headerlink" title="思路1 通过齐次旋转矩阵间接转化"></a>思路1 通过齐次旋转矩阵间接转化</h4><pre><code>def matrix_from_quaternion(quaternion, pos=None):
+    return qc</code></pre><h3 id="已知末端姿态的四元数表示，求末端z轴的向量表示"><a href="#已知末端姿态的四元数表示，求末端z轴的向量表示" class="headerlink" title="已知末端姿态的四元数表示，求末端z轴的向量表示"></a>已知末端姿态的四元数表示，求末端z轴的向量表示</h3><p>设姿态为q0(x,y,z,w),思路是[0,0,1]左乘q0,右乘q0的逆<br>        q1=[0,0,1,0]<br>        q2=qua_multi(q0,q1,0)     #q1左乘q0<br>        q0_0=[-q0[0],-q0[1],-q0[2],q0[3]]<br>        q3=qua_multi(q0_0,q2,1)    #右乘q0的逆，前提是将q0转化成单位四元数，否则求逆时还要在共轭的基础上除以模长的平方</p>
+<h3 id="已知末端姿态，求绕z轴旋转120度的新姿态"><a href="#已知末端姿态，求绕z轴旋转120度的新姿态" class="headerlink" title="已知末端姿态，求绕z轴旋转120度的新姿态"></a>已知末端姿态，求绕z轴旋转120度的新姿态</h3><pre><code>末端姿态四元数均是在基座标系下的表示，而z轴是动系的坐标轴</code></pre><h4 id="思路1-通过齐次旋转矩阵间接转化"><a href="#思路1-通过齐次旋转矩阵间接转化" class="headerlink" title="思路1 通过齐次旋转矩阵间接转化"></a>思路1 通过齐次旋转矩阵间接转化</h4><pre><code>def matrix_from_quaternion(quaternion, pos=None):
         #由四元数返回齐次旋转矩阵
     q = np.array(quaternion, dtype=np.float64, copy=True)
     q = q[[3, 0, 1, 2]]
@@ -416,7 +414,7 @@ $$</code></pre>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" target="_blank" rel="noopener" title="xx">xx</a></p>
     <p><span class="copy-title">发布时间:</span>2020-11-23, 22:15:59</p>
-    <p><span class="copy-title">最后更新:</span>2020-11-24, 11:36:08</p>
+    <p><span class="copy-title">最后更新:</span>2020-11-24, 11:41:18</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/11/23/%E5%9B%9B%E5%85%83%E6%95%B0%E4%B8%8E%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5/" title="四元数与旋转矩阵">http://dmzecho.github.io/2020/11/23/%E5%9B%9B%E5%85%83%E6%95%B0%E4%B8%8E%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
