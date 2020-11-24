@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="四元数与旋转矩阵部分摘自 https:&#x2F;&#x2F;krasjet.github.io&#x2F;quaternion&#x2F;quaternion.pdf        里面对四元数和3D旋转的关系以及四元数乘法运算讲得很详细 四元数的介绍视频 https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1SW411y7W1https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1Lt411U7og 四元数">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-11-24T08:07:45.834Z">
+<meta property="og:updated_time" content="2020-11-24T08:09:42.621Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -139,19 +139,19 @@
     <nav id="title-list-nav">
         
         <a  class=""
-           href="/2020/11/20/Markdown%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="Markdown语法基础">Markdown语法基础</span>
-            <span class="post-date" title="2020-11-20 20:22:54">2020/11/20</span>
-        </a>
-        
-        <a  class=""
            href="/2020/11/19/Hexo%E9%85%8D%E7%BD%AE/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="Hexo配置">Hexo配置</span>
             <span class="post-date" title="2020-11-19 22:32:42">2020/11/19</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/11/20/Markdown%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Markdown语法基础">Markdown语法基础</span>
+            <span class="post-date" title="2020-11-20 20:22:54">2020/11/20</span>
         </a>
         
         <a  class=""
@@ -211,19 +211,19 @@
         </a>
         
         <a  class=""
-           href="/2020/11/11/%E5%9B%9B%E6%9C%88%E8%A3%82%E5%B8%9B%20%20%20%E7%AE%80%E5%AA%9C/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="四月裂帛   简媜">四月裂帛   简媜</span>
-            <span class="post-date" title="2020-11-11 21:41:44">2020/11/11</span>
-        </a>
-        
-        <a  class=""
            href="/2020/11/17/c++%E5%AD%A6%E4%B9%A0/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="c++学习">c++学习</span>
             <span class="post-date" title="2020-11-17 22:55:06">2020/11/17</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/11/11/%E5%9B%9B%E6%9C%88%E8%A3%82%E5%B8%9B%20%20%20%E7%AE%80%E5%AA%9C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="四月裂帛   简媜">四月裂帛   简媜</span>
+            <span class="post-date" title="2020-11-11 21:41:44">2020/11/11</span>
         </a>
         
     </nav>
@@ -256,7 +256,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-11-24 16:07:45'>2020-11-24 11:50</time>
+        创建时间:<time class="date" title='更新时间: 2020-11-24 16:09:42'>2020-11-24 11:50</time>
         
     </div>
     <div class="article-meta">
@@ -410,7 +410,7 @@ def go_to_orien(a):
     q1[2]=math.sin(a*math.pi/180/2)*q3[2]
     q1[3]=math.cos(a*math.pi/180/2)               #绕z轴旋转a度的四元数表示 cos(theta/2)+sin(theta/2)(b*i+c*j+d*k)
 
-    qd=qua_multi(q1,q0,0)       #只用左乘q1即可得到新的姿态四元数，一个点左乘q右乘q逆是得到点新的坐标（一定是纯四元数）</code></pre><h3 id="四元数计算公式"><a href="#四元数计算公式" class="headerlink" title="四元数计算公式"></a>四元数计算公式</h3><h4 id="四元数乘法"><a href="#四元数乘法" class="headerlink" title="四元数乘法"></a>四元数乘法</h4><p>$$<br>q_{1}=a+b i+c j+d k, \quad q_{2}=e+f i+g j+h k<br>$$<br>q2左乘q1<br>$q_{1} q_{2}=\left[\begin{array}{cccc}a &amp; -b &amp; -c &amp; -d \\ b &amp; a &amp; -d &amp; c \\ c &amp; d &amp; a &amp; -b \\ d &amp; -c &amp; b &amp; a\end{array}\right]\left[\begin{array}{l}e \\ f \\ g \\ h\end{array}\right]$<br>q2右乘q1<br>$$<br>q_{2} q_{1}=\left[\begin{array}{cccc}<br>a &amp; -b &amp; -c &amp; -d \\<br>b &amp; a &amp; d &amp; -c \\<br>c &amp; -d &amp; a &amp; b \\<br>d &amp; c &amp; -b &amp; a<br>\end{array}\right]\left[\begin{array}{l}<br>e \\<br>f \\<br>g \\<br>h<br>\end{array}\right]<br>$$</p>
+    qd=qua_multi(q1,q0,0)       #只用左乘q1即可得到新的姿态四元数，一个点左乘q右乘q逆是得到点新的坐标（一定是纯四元数）</code></pre><h3 id="四元数计算公式"><a href="#四元数计算公式" class="headerlink" title="四元数计算公式"></a>四元数计算公式</h3><h4 id="四元数乘法"><a href="#四元数乘法" class="headerlink" title="四元数乘法"></a>四元数乘法</h4><p>$$<br>q_{1}=a+b i+c j+d k, \quad q_{2}=e+f i+g j+h k<br>$$<br>q2左乘q1<br>$$<br>q_{1} q_{2}=\left[\begin{array}{cccc}<br>a &amp; -b &amp; -c &amp; -d \\<br>b &amp; a &amp; -d &amp; c \\<br>c &amp; d &amp; a &amp; -b \\<br>d &amp; -c &amp; b &amp; a<br>\end{array}\right]\left[\begin{array}{l}<br>e \\<br>f \\<br>g \\<br>h<br>\end{array}\right]<br>$$<br>q2右乘q1<br>$$<br>q_{2} q_{1}=\left[\begin{array}{cccc}<br>a &amp; -b &amp; -c &amp; -d \\<br>b &amp; a &amp; d &amp; -c \\<br>c &amp; -d &amp; a &amp; b \\<br>d &amp; c &amp; -b &amp; a<br>\end{array}\right]\left[\begin{array}{l}<br>e \\<br>f \\<br>g \\<br>h<br>\end{array}\right]<br>$$</p>
 
       
        
@@ -424,7 +424,7 @@ def go_to_orien(a):
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" target="_blank" rel="noopener" title="xx">xx</a></p>
     <p><span class="copy-title">发布时间:</span>2020-11-24, 11:50:58</p>
-    <p><span class="copy-title">最后更新:</span>2020-11-24, 16:07:45</p>
+    <p><span class="copy-title">最后更新:</span>2020-11-24, 16:09:42</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/11/24/%E5%9B%9B%E5%85%83%E6%95%B0/" title="四元数">http://dmzecho.github.io/2020/11/24/%E5%9B%9B%E5%85%83%E6%95%B0/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
