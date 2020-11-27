@@ -6,14 +6,15 @@
   <meta name="keywords" content="">
   <meta name="description" content="c++学习 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="Python学习列表赋值​        如果采用直接列表相等的赋值方式，则当原列表原始变化的时候，被赋值的变量的列表内容也会发生变化。 my_fruits=[&amp;quot;apple&amp;quot;,&amp;quot;banana&amp;quot;,&amp;quot;juice&amp;quot;] your_fruits=my_fruits print(your_fruits) my_fruits.append(&amp;quot;">
+<meta name="description" content="四元数与旋转矩阵部分摘自 https:&#x2F;&#x2F;krasjet.github.io&#x2F;quaternion&#x2F;quaternion.pdf        里面对四元数和3D旋转的关系以及四元数乘法运算讲得很详细 四元数的介绍视频 https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1SW411y7W1https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1Lt411U7og 四元数">
+<meta name="keywords" content="math">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python学习">
-<meta property="og:url" content="http:&#x2F;&#x2F;dmzecho.github.io&#x2F;2020&#x2F;11&#x2F;19&#x2F;Python%E5%AD%A6%E4%B9%A0&#x2F;index.html">
+<meta property="og:title" content="四元数">
+<meta property="og:url" content="http:&#x2F;&#x2F;dmzecho.github.io&#x2F;2020&#x2F;11&#x2F;24&#x2F;%E5%9B%9B%E5%85%83%E6%95%B0&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Python学习列表赋值​        如果采用直接列表相等的赋值方式，则当原列表原始变化的时候，被赋值的变量的列表内容也会发生变化。 my_fruits=[&amp;quot;apple&amp;quot;,&amp;quot;banana&amp;quot;,&amp;quot;juice&amp;quot;] your_fruits=my_fruits print(your_fruits) my_fruits.append(&amp;quot;">
+<meta property="og:description" content="四元数与旋转矩阵部分摘自 https:&#x2F;&#x2F;krasjet.github.io&#x2F;quaternion&#x2F;quaternion.pdf        里面对四元数和3D旋转的关系以及四元数乘法运算讲得很详细 四元数的介绍视频 https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1SW411y7W1https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1Lt411U7og 四元数">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-11-27T09:21:31.554Z">
+<meta property="og:updated_time" content="2020-11-24T08:11:19.299Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -138,14 +139,6 @@
     <nav id="title-list-nav">
         
         <a  class=""
-           href="/2020/11/19/Python%E5%AD%A6%E4%B9%A0/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="Python学习">Python学习</span>
-            <span class="post-date" title="2020-11-19 22:34:16">2020/11/19</span>
-        </a>
-        
-        <a  class=""
            href="/2020/11/19/Hexo%E9%85%8D%E7%BD%AE/"
            data-tag=""
            data-author="" >
@@ -162,18 +155,26 @@
         </a>
         
         <a  class=""
+           href="/2020/11/19/Python%E5%AD%A6%E4%B9%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Python学习">Python学习</span>
+            <span class="post-date" title="2020-11-19 22:34:16">2020/11/19</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/11/17/c++%E5%AD%A6%E4%B9%A0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="c++学习">c++学习</span>
+            <span class="post-date" title="2020-11-17 22:55:06">2020/11/17</span>
+        </a>
+        
+        <a  class=""
            href="/2020/11/10/ROS%E5%AD%A6%E4%B9%A0/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="ROS学习">ROS学习</span>
-            <span class="post-date" title="2020-11-10 19:42:44">2020/11/10</span>
-        </a>
-        
-        <a  class=""
-           href="/2020/11/10/Typora%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="Typora常用快捷键">Typora常用快捷键</span>
             <span class="post-date" title="2020-11-10 19:42:44">2020/11/10</span>
         </a>
         
@@ -186,19 +187,11 @@
         </a>
         
         <a  class=""
-           href="/2020/11/24/%E5%9B%9B%E5%85%83%E6%95%B0/"
-           data-tag="math"
-           data-author="" >
-            <span class="post-title" title="四元数">四元数</span>
-            <span class="post-date" title="2020-11-24 11:50:58">2020/11/24</span>
-        </a>
-        
-        <a  class=""
-           href="/2020/11/17/c++%E5%AD%A6%E4%B9%A0/"
+           href="/2020/11/10/Typora%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="c++学习">c++学习</span>
-            <span class="post-date" title="2020-11-17 22:55:06">2020/11/17</span>
+            <span class="post-title" title="Typora常用快捷键">Typora常用快捷键</span>
+            <span class="post-date" title="2020-11-10 19:42:44">2020/11/10</span>
         </a>
         
         <a  class=""
@@ -215,6 +208,14 @@
            data-author="" >
             <span class="post-title" title="xx">xx</span>
             <span class="post-date" title="2019-11-02 16:43:17">2019/11/02</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/11/24/%E5%9B%9B%E5%85%83%E6%95%B0/"
+           data-tag="math"
+           data-author="" >
+            <span class="post-title" title="四元数">四元数</span>
+            <span class="post-date" title="2020-11-24 11:50:58">2020/11/24</span>
         </a>
         
         <a  class=""
@@ -249,7 +250,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-11-27 22:26:02'>2020-11-17 22:55</time>
+        创建时间:<time class="date" title='更新时间: 2020-11-27 22:32:33'>2020-11-17 22:55</time>
         
     </div>
     <div class="article-meta">
@@ -287,7 +288,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="c-学习——By-Xie"><a href="#c-学习——By-Xie" class="headerlink" title="c++学习——By Xie"></a>c++学习——By Xie</h1><h4 id="VS使用技巧"><a href="#VS使用技巧" class="headerlink" title="VS使用技巧"></a>VS使用技巧</h4><p>注释：     先<strong>CTRL+K</strong>，然后<strong>CTRL+C</strong>          或者加//</p>
+        <h1 id="c-学习——By-Xie"><a href="#c-学习——By-Xie" class="headerlink" title="c++学习——By Xie"></a>c++学习——By Xie</h1><p>以下均为学习b站黑马程序员C++所做笔记，以及简单的学习心得<br><a href="https://www.bilibili.com/video/BV1et411b73Z" target="_blank" rel="noopener">黑马程序员匠心之作|C++教程从0到1入门编程,学习编程不再难</a></p>
+<h4 id="VS使用技巧"><a href="#VS使用技巧" class="headerlink" title="VS使用技巧"></a>VS使用技巧</h4><p>注释：     先<strong>CTRL+K</strong>，然后<strong>CTRL+C</strong>          或者加//</p>
 <p>取消注释： 先<strong>CTRL+K</strong>，然后<strong>CTRL+U</strong>    或者删除//</p>
 <p>调试：<strong>F5</strong></p>
 <p>单步执行：<strong>F10</strong></p>
@@ -2594,8 +2596,19 @@ void test()
 {
     cat a;
     dospeak(a);      //允许父类的引用指向子类的对象 Animal &amp;animal = cat，不需要做类型转换
-}</code></pre><h4 id="动态多态（父类函数前加virtual）"><a href="#动态多态（父类函数前加virtual）" class="headerlink" title="动态多态（父类函数前加virtual）"></a>动态多态（父类函数前加virtual）</h4><p>满足条件<br>1、有类的继承关系<br>2、子类重写父类的虚函数（函数返回类型、函数名、参数条件都想同）<br>3、全局函数中父类通过指针或引用指向子类对象<br>    class Calculator<br>    {<br>    public:<br>        virtual int get_result()=0;<br>        //纯虚函数<br>        //有纯虚函数的类称为抽象类<br>        //1、不能实例化对象；2、子类需重写纯虚函数，否则仍为抽象类<br>        int a;<br>        int b;<br>    };       //抽象的计算器类</p>
-<pre><code>class ADDCalculator : public Calculator
+}</code></pre><h4 id="动态多态（父类函数前加virtual）"><a href="#动态多态（父类函数前加virtual）" class="headerlink" title="动态多态（父类函数前加virtual）"></a>动态多态（父类函数前加virtual）</h4><p>满足条件<br>1、有类的继承关系<br>2、子类重写父类的虚函数（函数返回类型、函数名、参数条件都想同）<br>3、全局函数中父类通过指针或引用指向子类对象</p>
+<pre><code>class Calculator
+{
+public:
+    virtual int get_result()=0;   
+    //纯虚函数
+    //有纯虚函数的类称为抽象类
+    //1、不能实例化对象；2、子类需重写纯虚函数，否则仍为抽象类
+    int a;
+    int b;
+};       //抽象的计算器类
+
+class ADDCalculator : public Calculator
 {
 public:
     int get_result()
@@ -2654,7 +2667,7 @@ void test()
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" target="_blank" rel="noopener" title="xx">xx</a></p>
     <p><span class="copy-title">发布时间:</span>2020-11-17, 22:55:06</p>
-    <p><span class="copy-title">最后更新:</span>2020-11-27, 22:26:02</p>
+    <p><span class="copy-title">最后更新:</span>2020-11-27, 22:32:33</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/11/17/c++%E5%AD%A6%E4%B9%A0/" title="c++学习">http://dmzecho.github.io/2020/11/17/c++%E5%AD%A6%E4%B9%A0/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
