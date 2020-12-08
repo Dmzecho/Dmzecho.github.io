@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>Matlab学习</title>
+      <link href="2020/12/08/Matlab%E5%AD%A6%E4%B9%A0/"/>
+      <url>2020/12/08/Matlab%E5%AD%A6%E4%B9%A0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Matlab学习"><a href="#Matlab学习" class="headerlink" title="Matlab学习"></a>Matlab学习</h1><h4 id="坐标轴设置"><a href="#坐标轴设置" class="headerlink" title="坐标轴设置"></a>坐标轴设置</h4><pre><code>axis([-0.6,0.6,-0.5,0.5])          #设置坐标轴显示范围set(gca,&apos;xtick&apos;,-0.6:0.2:0.6)      #坐标轴标注范围和间隔set(gca,&apos;ytick&apos;,-0.5:0.1:0.5)xlabel(&apos;x&apos;)ylabel(&apos;y&apos;)</code></pre>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>四元数</title>
       <link href="2020/11/24/%E5%9B%9B%E5%85%83%E6%95%B0/"/>
       <url>2020/11/24/%E5%9B%9B%E5%85%83%E6%95%B0/</url>
