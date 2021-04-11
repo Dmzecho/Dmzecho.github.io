@@ -8,7 +8,7 @@
       <link href="2021/04/11/conda%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/"/>
       <url>2021/04/11/conda%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</url>
       
-        <content type="html"><![CDATA[<h3 id="新建conda环境"><a href="#新建conda环境" class="headerlink" title="新建conda环境"></a>新建conda环境</h3><pre><code>conda create -n 环境名#如果有python版本要求，在末尾跟上，如python=2.7</code></pre><h3 id="激活conda环境"><a href="#激活conda环境" class="headerlink" title="激活conda环境"></a>激活conda环境</h3><pre><code>conda activate 环境名#激活之后会自动进入该环境，为了使用方便，建议在 .bashrc文件中加入快捷方式</code></pre><h3 id="向环境中添加包"><a href="#向环境中添加包" class="headerlink" title="向环境中添加包"></a>向环境中添加包</h3><pre><code>conda install 包名#与pip install 效果一样</code></pre><h3 id="其他常用命令"><a href="#其他常用命令" class="headerlink" title="其他常用命令"></a>其他常用命令</h3><pre><code>#查看所有的虚拟环境conda info -e#指定安装包的版本conda install tensorflow-gpu==1.5.0#退出整个conda环境conda deactivate</code></pre>]]></content>
+        <content type="html"><![CDATA[<h3 id="新建conda环境"><a href="#新建conda环境" class="headerlink" title="新建conda环境"></a>新建conda环境</h3><pre><code>conda create -n 环境名#如果有python版本要求，在末尾跟上，如python=2.7</code></pre><h3 id="激活conda环境"><a href="#激活conda环境" class="headerlink" title="激活conda环境"></a>激活conda环境</h3><pre><code>conda activate 环境名#激活之后会自动进入该环境，为了使用方便，建议在 .bashrc文件中加入快捷方式</code></pre><h3 id="向环境中添加包"><a href="#向环境中添加包" class="headerlink" title="向环境中添加包"></a>向环境中添加包</h3><pre><code>conda install 包名#与pip install 效果一样</code></pre><h3 id="其他常用命令"><a href="#其他常用命令" class="headerlink" title="其他常用命令"></a>其他常用命令</h3><pre><code>conda info -e#查看所有的虚拟环境conda install tensorflow-gpu==1.5.0#指定安装包的版本conda deactivate#退出整个conda环境</code></pre>]]></content>
       
       
       
