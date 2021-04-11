@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>ROS学习 | Hexo</title>
+  <title>conda简单使用 | Hexo</title>
   <meta name="keywords" content="">
-  <meta name="description" content="ROS学习 | Hexo">
+  <meta name="description" content="conda简单使用 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="先占一个坑，说说我最爱的《挪威的森林》">
 <meta property="og:type" content="article">
@@ -261,9 +261,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-ROS学习" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-conda简单使用" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">ROS学习</h1>
+        <h1 class="article-title">conda简单使用</h1>
     
     <div class="article-meta">
         
@@ -273,7 +273,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2021-01-14 21:32:13'>2020-11-10 19:42</time>
+        创建时间:<time class="date" title='更新时间: 2021-04-11 16:40:40'>2021-04-11 16:21</time>
         
     </div>
     <div class="article-meta">
@@ -295,7 +295,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ROS学习"><span class="toc-text">ROS学习</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#rosrun和roslaunch"><span class="toc-text">rosrun和roslaunch</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#包的编译和安装"><span class="toc-text">包的编译和安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#启动rqt和rqt-plot报错"><span class="toc-text">启动rqt和rqt_plot报错</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#新建conda环境"><span class="toc-text">新建conda环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#激活conda环境"><span class="toc-text">激活conda环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#向环境中添加包"><span class="toc-text">向环境中添加包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他常用命令"><span class="toc-text">其他常用命令</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -311,25 +311,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="ROS学习"><a href="#ROS学习" class="headerlink" title="ROS学习"></a>ROS学习</h1><pre><code>rosnode list #列出活跃的节点信息</code></pre><p>​.msg文件就是一个描述ROS中所使用消息类型的简单文本，它放在package的msg目录下，该文件实际上就是每行声明一个数据类型和变量名<br>​ROS客户端库允许使用<strong>不同编程语言</strong>编写的<strong>节点</strong>之间互相通信（即节点的生成形式不受到限制）</p>
-<pre><code>rospy      #python 客户端库
-roscpp     #c++ 客户端库</code></pre><h4 id="rosrun和roslaunch"><a href="#rosrun和roslaunch" class="headerlink" title="rosrun和roslaunch"></a>rosrun和roslaunch</h4><p>​rosrun允许你使用包名直接运行<strong>一个</strong>包内的节点(不需要知道这个包具体的路径），但是该ros包需要在终端中能找到（即需要source路径），且一个.py或者.cpp文件（可执行文件）就是一个节点。</p>
-<pre><code>rosrun [package_name] [node_name]</code></pre><p>roslaunch可以用来启动定义在launch文件中的<strong>多个</strong>节点</p>
-<pre><code>roslaunch [package] [filename.launch]</code></pre><p>rolaunch中启动的不一定要是单个节点，也可以是另一个子launch文件，例如：</p>
-<p><em>启动单个节点（可执行程序）</em></p>
-<pre><code>&lt;node pkg=&quot;franka_control_node&quot; type=&quot;control_node.py&quot; name=&quot;franka_driver&quot; output=&quot;screen&quot;/&gt;</code></pre><p><em>启动另一个launch文件，即启动其中的所有节点</em></p>
-<pre><code>&lt;include file=&quot;$(find kinect2_bridge)/launch/kinect2_bridge.launch&quot; /&gt;</code></pre><p><strong>机器人gazebo仿真控制     Matlab Simulink工具箱</strong>     <strong>基于模型设计MBD</strong></p>
-<p><strong>基于Matlab/simulink-ros 联合机器人开发</strong></p>
-<pre><code>rosdep install --from-paths src --ignore-src -r -y
-#可以将该工作空间内的所有package的依赖项一起安装</code></pre><p><strong>roslaunch时遇到无法定位节点</strong></p>
-<pre><code>ERROR: cannot launch node of type [main_control/position_transform.py]: can&apos;t locate node [position_transform.py] in package [main_control]
-#1、查看是否source路径 2、赋予文件执行权限 sudo chmod +x aaaaaa.py</code></pre><h4 id="包的编译和安装"><a href="#包的编译和安装" class="headerlink" title="包的编译和安装"></a>包的编译和安装</h4><pre><code>mkdir build
-cd build
-cmake ..
-make
-sudo make install
-#可以将包安装到/home/xx/.local</code></pre><h4 id="启动rqt和rqt-plot报错"><a href="#启动rqt和rqt-plot报错" class="headerlink" title="启动rqt和rqt_plot报错"></a>启动rqt和rqt_plot报错</h4><p>由于matplotlib版本原因启动rqt_plot报错，降级（升级）后仍无效，可考虑卸载qt5再重装<br>    sudo apt remove ros-kinetic-qt5*</p>
+        <h3 id="新建conda环境"><a href="#新建conda环境" class="headerlink" title="新建conda环境"></a>新建conda环境</h3><pre><code>conda create -n 环境名
+#如果有python版本要求，在末尾跟上，如python=2.7</code></pre><h3 id="激活conda环境"><a href="#激活conda环境" class="headerlink" title="激活conda环境"></a>激活conda环境</h3><pre><code>conda activate 环境名
+#激活之后会自动进入该环境，为了使用方便，建议在 .bashrc文件中加入快捷方式</code></pre><h3 id="向环境中添加包"><a href="#向环境中添加包" class="headerlink" title="向环境中添加包"></a>向环境中添加包</h3><pre><code>conda install 包名
+#与pip install 效果一样</code></pre><h3 id="其他常用命令"><a href="#其他常用命令" class="headerlink" title="其他常用命令"></a>其他常用命令</h3><pre><code>#查看所有的虚拟环境
+conda info -e
 
+#指定安装包的版本
+conda install tensorflow-gpu==1.5.0
+
+#退出整个conda环境
+conda deactivate</code></pre>
       
        
     </div>
@@ -338,12 +330,12 @@ sudo make install
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>ROS学习</p>
+    <p><span class="copy-title">文章标题:</span>conda简单使用</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" target="_blank" rel="noopener" title="Echo">Echo</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-11-10, 19:42:44</p>
-    <p><span class="copy-title">最后更新:</span>2021-01-14, 21:32:13</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/11/10/ROS%E5%AD%A6%E4%B9%A0/" title="ROS学习">http://dmzecho.github.io/2020/11/10/ROS%E5%AD%A6%E4%B9%A0/</a>
+    <p><span class="copy-title">发布时间:</span>2021-04-11, 16:21:12</p>
+    <p><span class="copy-title">最后更新:</span>2021-04-11, 16:40:40</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/04/11/conda%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/" title="conda简单使用">http://dmzecho.github.io/2021/04/11/conda%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
