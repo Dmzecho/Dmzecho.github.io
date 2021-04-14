@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>c++进阶</title>
+      <link href="2021/04/14/c++%E8%BF%9B%E9%98%B6/"/>
+      <url>2021/04/14/c++%E8%BF%9B%E9%98%B6/</url>
+      
+        <content type="html"><![CDATA[<h3 id="std-vector-定义长度可变的数组"><a href="#std-vector-定义长度可变的数组" class="headerlink" title="std::vector 定义长度可变的数组"></a>std::vector 定义长度可变的数组</h3><h4 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h4><pre><code>std::vector&lt;std::string&gt; str;str.push_back(&quot;ur5e_&quot;);str.push_back(&quot;test1&quot;);for (int i=0;i&lt;str.size();i++){    std::cout&lt;&lt;str[i]&lt;&lt;&quot; &quot;;}std::cout&lt;&lt;std::endl;//str.size() 用于获取数组长度 </code></pre><h4 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h4><pre><code>std::vector&lt;std::vector&lt;int&gt; &gt; vec(1);   //指定行数vec[0].resize(2);    //指定列数vec[0][0]=2;vec[0][1]=1;for(int i=0;i&lt;vec.size();i++) {    for (int j = 0; j &lt; vec[0].size(); j++) {        std::cout &lt;&lt; vec[i][j] &lt;&lt; &quot; &quot;;    }    std::cout &lt;&lt; std::endl;}</code></pre>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>conda简单使用</title>
       <link href="2021/04/11/conda%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/"/>
       <url>2021/04/11/conda%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</url>
