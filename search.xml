@@ -8,7 +8,7 @@
       <link href="2021/04/15/QT/"/>
       <url>2021/04/15/QT/</url>
       
-        <content type="html"><![CDATA[<h3 id="QT-Creator-快捷键"><a href="#QT-Creator-快捷键" class="headerlink" title="QT Creator 快捷键"></a>QT Creator 快捷键</h3><pre><code>//注释    Ctrl + ///编译    Ctrl + b//运行    Ctrl + r//字体缩放 Ctrl + 鼠标滚轮//查找    Ctrl + f//自动对齐 Ctrl + i//帮助    F1//跳转    F2//同名.cpp和.h文件的切换 F4</code></pre><p>###对象树<br>在创建一个对象时，如果指定其父对象，则该对象会自动添加到其父对象的children()列表中。并且其父对象析构时，这个列表中所有子对象都会析构。<br>故如果对象继承关系为QObject-&gt;QWidget-&gt;myWidget-&gt;创建的所有对象，则不用考虑堆区对象的释放问题，结束时会从子到父依次析构。</p>]]></content>
+        <content type="html"><![CDATA[<h3 id="QT-Creator-快捷键"><a href="#QT-Creator-快捷键" class="headerlink" title="QT Creator 快捷键"></a>QT Creator 快捷键</h3><pre><code>//注释    Ctrl + ///编译    Ctrl + b//运行    Ctrl + r//字体缩放 Ctrl + 鼠标滚轮//查找    Ctrl + f//自动对齐 Ctrl + i//帮助    F1//跳转    F2//同名.cpp和.h文件的切换 F4</code></pre><h3 id="对象树"><a href="#对象树" class="headerlink" title="对象树"></a>对象树</h3><p>  在创建一个对象时，如果指定其父对象，则该对象会自动添加到其父对象的children()列表中。并且其父对象析构时，这个列表中所有子对象都会析构。<br>  故如果对象继承关系为QObject-&gt;QWidget-&gt;myWidget-&gt;创建的所有对象，则不用考虑堆区对象的释放问题，结束时会从子到父依次析构。</p>]]></content>
       
       
       
