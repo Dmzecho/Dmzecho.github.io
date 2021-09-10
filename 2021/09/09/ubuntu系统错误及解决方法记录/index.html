@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Matlab学习 | Hexo</title>
+  <title>ubuntu系统错误及解决方法记录 | Hexo</title>
   <meta name="keywords" content="">
-  <meta name="description" content="Matlab学习 | Hexo">
+  <meta name="description" content="ubuntu系统错误及解决方法记录 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="进系统报错Ubuntu系统重启,无法进入图像界面,提示 Welcome to emergency mode 解决方法参考:Welcome to emergency mode的解决方法 步骤: 1 执行命令 journalctl -xb 查看日志输出 2 搜索关键字”fsck failed”（输入&#x2F;，然后输入关键字后回车，通过N&#x2F;n查看上一个&#x2F;下一个匹配项） 3 在附近查看出问题的设备名,如: &#x2F;d">
 <meta property="og:type" content="article">
@@ -285,9 +285,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Matlab学习" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-ubuntu系统错误及解决方法记录" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Matlab学习</h1>
+        <h1 class="article-title">ubuntu系统错误及解决方法记录</h1>
     
     <div class="article-meta">
         
@@ -297,7 +297,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2021-06-24 15:20:20'>2020-12-15 09:36</time>
+        创建时间:<time class="date" title='更新时间: 2021-09-10 21:28:36'>2021-09-09 19:19</time>
         
     </div>
     <div class="article-meta">
@@ -319,7 +319,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Matlab学习"><span class="toc-text">Matlab学习</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#坐标轴设置"><span class="toc-text">坐标轴设置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#矩阵定义"><span class="toc-text">矩阵定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#常用函数"><span class="toc-text">常用函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#画图"><span class="toc-text">画图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#论文中matlab标准画图"><span class="toc-text">论文中matlab标准画图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ndgrid-生成网格"><span class="toc-text">ndgrid 生成网格</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#size-返回矩阵的维度"><span class="toc-text">size 返回矩阵的维度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sum-求元素的和"><span class="toc-text">sum 求元素的和</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fmincon"><span class="toc-text">fmincon</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#solve-解方程（组）"><span class="toc-text">solve 解方程（组）</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#进系统报错"><span class="toc-text">进系统报错</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -335,98 +335,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Matlab学习"><a href="#Matlab学习" class="headerlink" title="Matlab学习"></a>Matlab学习</h1><h4 id="坐标轴设置"><a href="#坐标轴设置" class="headerlink" title="坐标轴设置"></a>坐标轴设置</h4><pre><code>axis([-0.6,0.6,-0.5,0.5])          #设置坐标轴显示范围
-set(gca,&apos;xtick&apos;,-0.6:0.2:0.6)      #坐标轴标注范围和间隔
-set(gca,&apos;ytick&apos;,-0.5:0.1:0.5)
-axis equal                         #使x,y轴的单位长度相同
-axis square                        #出图为正方形
-xlabel(&apos;x&apos;)
-ylabel(&apos;y&apos;)</code></pre><h4 id="矩阵定义"><a href="#矩阵定义" class="headerlink" title="矩阵定义"></a>矩阵定义</h4><p>a、矩阵元素必须在”[ ]”内；<br>b、矩阵的同行元素之间用空格或逗号隔开；<br>c、矩阵的行与行之间用”;”（或回车符）隔开；<br>d、矩阵的元素可以是数值、变量、表达式或函数；<br>e、矩阵的尺寸不必预先定义。</p>
-<pre><code>a=[[1,2,3];[3,2,1]]
-a=[1,2,3;3,2,1]</code></pre><h4 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h4><pre><code>spline  #三次样条数据插值，yy = spline(x,y,xx)，返回在xx处的函数值yy
-#即已知x上若干离散点对应的y中的值，用三次样条曲线插值，得到xx中点的值，xx一般为linspace()
-
-repmat  #矩阵平铺，repmat([1,2;3,4],2,3),得到一个4×6的矩阵</code></pre><h4 id="画图"><a href="#画图" class="headerlink" title="画图"></a>画图</h4><pre><code>plot3(rDataj(1,:), rDataj(2,:),rDataj(3,:), &apos;-&apos;,&apos;lineWidth&apos;,2,&apos;color&apos;,[0 .8 0])
-#指定线宽和颜色</code></pre><h4 id="论文中matlab标准画图"><a href="#论文中matlab标准画图" class="headerlink" title="论文中matlab标准画图"></a>论文中matlab标准画图</h4><pre><code>width = 240;   % 240pt  US letter 双栏 1pt = 1/72inch   1 inch = 25.4mm
-
-xlabel(&apos;\fontname{宋体}力模长\fontname{Times New Roman}(N)&apos;,&apos;Fontname&apos;, &apos;Times New Roman&apos;);
-#xlabel(&apos;Torque $M_x$ (Nm)&apos;,&apos;interpreter&apos;,&apos;latex&apos;,&apos;FontSize&apos;,8); % Latex格式的label
-ylabel(&apos;\fontname{宋体}概率&apos;,&apos;Fontname&apos;, &apos;Times New Roman&apos;);
-#设置坐标轴标识
-
-set(gca, &apos;Fontsize&apos;, 8);   
-#坐标轴句柄，设置坐标轴刻度数字样式
-set(gca, &apos;XTick&apos;,0:4:20);  
-#设置X轴刻度
-
-L1 = legend([P1 P2 P3],&apos;高斯分布&apos;,&apos;均值&apos;,&apos;阈值&apos;);
-set(L1,&apos;Location&apos;,&apos;northeast&apos;,&apos;Orientation&apos;,&apos;vertical&apos;,...
-    &apos;Fontname&apos;, &apos;宋体&apos;,&apos;FontSize&apos;,8,&apos;TextColor&apos;,&apos;black&apos;);
-#legend 格式  
-
-print(&apos;S:\PbD\graph\Force_threhold_change&apos;,&apos;-djpeg&apos;,&apos;-r600&apos;);
-#输出
-
-
-#例子
-width = 240;
-set(gcf,&apos;unit&apos;,&apos;points&apos;,&apos;PaperUnits&apos;,&apos;points&apos;,&apos;PaperPosition&apos;,[0,0,width,width/5*4],...
-    &apos;position&apos;,[500 300 width width/5*4],&apos;color&apos;,&apos;w&apos;,&apos;PaperSize&apos;,[width, width/5*4]);
-
-..........
-
-plot(Data(1,(n-1)*nbData+1:n*nbData), Data(m+1,(n-1)*nbData+1:n*nbData), &apos;-&apos;,&apos;lineWidth&apos;,1.2)   
-#设置线宽，最好是用变量表示，方便修改
-
-set(gca,&apos;xtick&apos;,1:1:10,&apos;Fontname&apos;,&apos;Times New Roman&apos;,&apos;FontSize&apos;,8);
-set(gca,&apos;ytick&apos;,-550:50:-50,&apos;Fontname&apos;,&apos;Times New Roman&apos;,&apos;FontSize&apos;,8);   #坐标轴刻度
-xlabel(&apos;t(s)&apos;,&apos;Fontname&apos;,&apos;Times New Roman&apos;,&apos;FontSize&apos;,8);
-ylabel(&apos;ave-EMG(mv)&apos;,&apos;Fontname&apos;,&apos;Times New Roman&apos;,&apos;FontSize&apos;,8);     #坐标轴标识</code></pre><h4 id="ndgrid-生成网格"><a href="#ndgrid-生成网格" class="headerlink" title="ndgrid 生成网格"></a>ndgrid 生成网格</h4><pre><code>nbGrid = 30; 
-rg = linspace(-3.5,3.5,nbGrid);         #Grid range
-[xm, ym] = ndgrid(rg,rg);     #size(xm)=30,30 
-xg = [xm(:)&apos;; ym(:)&apos;];        #Grid datapoints   size(xg)=2,900
-#size(xm(:)&apos;)=1,900  ,即将xm展成一行，类似于python中 np.reshape(1,-1)</code></pre><h4 id="size-返回矩阵的维度"><a href="#size-返回矩阵的维度" class="headerlink" title="size 返回矩阵的维度"></a>size 返回矩阵的维度</h4><pre><code>size(a) #返回矩阵a的行数和列数
-size(a，1)  #返回行数
-size(a，2)  #返回列数</code></pre><h4 id="sum-求元素的和"><a href="#sum-求元素的和" class="headerlink" title="sum 求元素的和"></a>sum 求元素的和</h4><pre><code>a=[[1,2,3,4];[2,3,4,5]]；
-b=sum(a);   #默认是按列求和，即保持列数不变
-# b=[3,5,7,9]
-c=sum(a,1)
-c=[3,5,7,9]
-d=sum(a,2)
-d=[10;14]</code></pre><h4 id="fmincon"><a href="#fmincon" class="headerlink" title="fmincon"></a>fmincon</h4><pre><code># fmincon是用于求解非线性多元函数最小值的matlab函数，优化工具箱提供fmincon函数用于对有约束优化问题进行求解
-
-x= fmincon(fun,x0,A,b) 
-#给定初值x0，求解fun函数的最小值x。fun函数的约束条件为A*x&lt;= b，x0可以是标量或向量
-
-x= fmincon(fun,x0,A,b,Aeq,beq) 
-#约束条件为Aeq*x= beq 和 A*x &lt;= b。若没有不等式线性约束存在，则设置A=[]、b=[]
-
-x= fmincon(fun,x0,A,b,Aeq,beq,lb,ub) 
-#定义设计变量x的线性不等式约束下界lb和上界ub，使得总是有lb&lt;= x &lt;= ub
-#若无等式线性约束存在，则令Aeq=[]、beq=[]
-
-options = optimoptions(&apos;fmincon&apos;,&apos;Display&apos;,&apos;off&apos;);    #创建优化选项
-x= fmincon(fun,x0,A,b,Aeq,beq,lb,ub,nonlcon,options);
-#给定初值x0，求解fun函数的最小值x,A 和 Aeq 为线性不等式约束和等式约束的系数矩阵
-#A*x&lt;= b,Aeq*x= beq,lb&lt;= x &lt;= ub
-#在nonlcon参数中提供非线性不等式c(x)或等式ceq(x),fmincon函数要求c(x) &lt;= 0且ceq(x)= 0
-#用options参数指定的参数进行最小化
-
-## 简单应用
-func = @(x)3*x^2+4*x+5;
-options = optimoptions(&apos;fmincon&apos;,&apos;Display&apos;,&apos;off&apos;);
-[a,b]=fmincon(func,-4,[],[],[],[],-7,10,[],options);
-# 得到 a=-0.6667,b=3.6667</code></pre><h4 id="solve-解方程（组）"><a href="#solve-解方程（组）" class="headerlink" title="solve 解方程（组）"></a>solve 解方程（组）</h4><pre><code># 解方程
-syms x；    #定义x为符号变量
-eq=x^2+2*x+1;
-s=solve(eq,x);
-
-# 解方程组
-syms x,y;
-eq1 = x+2*y-8;
-eq2 = 3*x+5*y-4;
-s=solve(eq1,eq2,x,y);
-# 得到 s.x =-32,   s.y=20</code></pre>
+        <h3 id="进系统报错"><a href="#进系统报错" class="headerlink" title="进系统报错"></a>进系统报错</h3><p>Ubuntu系统重启,无法进入图像界面,提示 Welcome to emergency mode</p>
+<p>解决方法参考:<a href="https://blog.csdn.net/xiangwanpeng/article/details/78083075" target="_blank" rel="noopener">Welcome to emergency mode的解决方法</a></p>
+<pre><code>步骤:
+1 执行命令 journalctl -xb 查看日志输出
+2 搜索关键字”fsck failed”（输入/，然后输入关键字后回车，通过N/n查看上一个/下一个匹配项）
+3 在附近查看出问题的设备名,如: /dev/sdb2
+4 执行命令 umount /dev/sdb2 卸载设备,显示无法卸载设备,个人猜想此步骤可以省略
+5 执行命令 fsck -y /dev/sdb2 执行fsck校验并修复文件
+6 reboot 重启系统,解决问题</code></pre>
       
        
     </div>
@@ -435,12 +352,12 @@ s=solve(eq1,eq2,x,y);
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Matlab学习</p>
+    <p><span class="copy-title">文章标题:</span>ubuntu系统错误及解决方法记录</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" target="_blank" rel="noopener" title="Echo">Echo</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-12-15, 09:36:27</p>
-    <p><span class="copy-title">最后更新:</span>2021-06-24, 15:20:20</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/12/15/Matlab%E5%AD%A6%E4%B9%A0/" title="Matlab学习">http://dmzecho.github.io/2020/12/15/Matlab%E5%AD%A6%E4%B9%A0/</a>
+    <p><span class="copy-title">发布时间:</span>2021-09-09, 19:19:25</p>
+    <p><span class="copy-title">最后更新:</span>2021-09-10, 21:28:36</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/09/09/ubuntu%E7%B3%BB%E7%BB%9F%E9%94%99%E8%AF%AF%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E8%AE%B0%E5%BD%95/" title="ubuntu系统错误及解决方法记录">http://dmzecho.github.io/2021/09/09/ubuntu%E7%B3%BB%E7%BB%9F%E9%94%99%E8%AF%AF%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E8%AE%B0%E5%BD%95/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
